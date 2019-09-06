@@ -6,16 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+MachineSnack.destroy_all
+Snack.destroy_all
 Machine.destroy_all
 Owner.destroy_all
 
-don = Owner.create!(name: Don)
+sam = Owner.create!(name: "Sam's Snacks")
+drew = Owner.create!(name: "Drew's Drinks")
 
-mixed_drinks = dom.machines.create!(location: Denver)
+sam_machine_1 = sam.machines.create!(location: "Don's Mixed Drinks")
 
-# ```Don's Mixed Drinks
-# Snacks
-# * White Castle Burger: $3.50
-# * Pop Rocks: $1.50
-# * Flaming Hot Cheetos: $2.50
-# Average Price: $2.50
+snack_1 = Snack.create!(name: "White Castle Burger", price: 3.5)
+snack_2 = Snack.create!(name: "Pop Rocks", price: 1.5)
+snack_3 = Snack.create!(name: "Flaming Hot Cheetos", price: 2.5)
+sam_machine_1.snacks << snack_1
+sam_machine_1.snacks << snack_2
+sam_machine_1.snacks << snack_3

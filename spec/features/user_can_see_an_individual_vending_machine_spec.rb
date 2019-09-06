@@ -23,6 +23,6 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
     expect(page).to have_content(@snack_3.name)
     expect(page).to have_content("$2.50")
 
-
+    expect(page).to have_content("Average Item Price: $2.50")
   end
 end
